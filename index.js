@@ -1,14 +1,14 @@
-import express from 'express'
-import dotenv from 'dotenv'
-import cors from 'cors'
+const express = require('express')
+const cors = require('cors')
 
-dotenv.config()
+require('dotenv').config()
 
 const PORT = process.env.PORT
 const app = express()
 
 app.use(cors())
 app.use(express.json())
+app.use(express.static('build'))
 
 let notes = [
   {
@@ -40,7 +40,7 @@ app.use((req, res, next) => {
   next()
 })
 
-app.get('/', (req, res) => {
+app.get('/api', (req, res) => {
   res.send(`
     <h1>Notes REST API</h1>
     <ul>
@@ -129,4 +129,4 @@ app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`)
 })
 
-export default app
+module.exports = app
