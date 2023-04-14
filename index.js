@@ -41,7 +41,16 @@ app.use((req, res, next) => {
 })
 
 app.get('/', (req, res) => {
-  res.send('<h1>Hello World!</h1>')
+  res.send(`
+    <h1>Notes REST API</h1>
+    <ul>
+      <li>See <b>GET</b> <a href="/api/notes">/api/notes</a> for all notes</li>
+      <li>See <b>GET</b> <a href="/api/notes/:id">/api/notes/:id</a> for a single note</li>
+      <li>See <b>POST</b> <a href="/api/notes">/api/notes</a> to create a new note</li>
+      <li>See <b>PUT</b> <a href="/api/notes/:id">/api/notes/:id</a> to update a note</li>
+      <li>See <b>DELETE</b> <a href="/api/notes/:id">/api/notes/:id</a> to delete a note</li>
+    </ul>
+  `)
 })
 
 app.get('/api/notes', (req, res) => {
