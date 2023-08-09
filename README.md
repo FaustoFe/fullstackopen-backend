@@ -1,7 +1,7 @@
 # Notes App Backend
 This repository contains the backend of the notes application developed as part of the [FullStackOpen course](fullstackopen.com). The notes app is a simple tool that allows users to create, read, update, and delete notes.
 
-Technologies Used
+## Technologies Used
 The backend has been developed using the following technologies:
 
 - Node.js
